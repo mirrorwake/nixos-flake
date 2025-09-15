@@ -1,0 +1,1 @@
+This is my personal NixOS flake. It's not much, but it's mine! I know there are a lot of weird quirks with it, I have a lot of projects going on currently and haven't had as much time to work on this as I would like.

@@ -1,0 +1,31 @@
+# Build outputs
+result
+result-*
+
+# Logs and caches
+*.log
+.cache/
+tmp/
+*.swp
+
+# VSCode / JetBrains / Zim / other editors
+.vscode/
+.idea/
+*~  # temp files
+*.bak
+
+# Python virtualenvs (if any)
+venv/
+.env/
+
+# compiled Lua or Python
+*.pyc
+*.luac
+
+# Trash from past lives
+.DS_Store
+Thumbs.db
+
+hosts/*/hardware-configuration.nix
+
+.env

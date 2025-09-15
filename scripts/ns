@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+QUERY="$1"
+CONTEXT="${2:-0}" # Default to 0 if not provided
+
+if [[ -z "$QUERY" ]]; then
+  echo "Usage: ns <query> [context_lines]"
+  exit 1
+fi
+
+rg -i -C "$CONTEXT" "$QUERY" ~/Sync/Notes

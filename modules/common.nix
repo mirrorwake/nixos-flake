@@ -1,0 +1,29 @@
+{
+  config,
+  pkgs,
+  ...
+}: {
+  environment.systemPackages = with pkgs; [
+    bash
+    tree
+    file
+    zip
+    htop
+    unzip
+    p7zip
+    ripgrep
+    git
+    gh
+    wget
+    vim
+    pciutils
+    tldr
+    killall
+    man
+    man-db
+    sshfs
+    ncurses
+    gnumake
+    wireguard-tools
+  ];
+}
