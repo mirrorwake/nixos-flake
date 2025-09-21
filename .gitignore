@@ -29,3 +29,4 @@ Thumbs.db
 hosts/*/hardware-configuration.nix
 
 .env
+.nix-cache/

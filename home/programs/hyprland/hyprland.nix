@@ -32,24 +32,26 @@
   xdg.configFile."kitty/kitty.conf".source = ../kitty/config/kitty.conf;
   xdg.configFile."kitty/current-theme.conf".source = ../kitty/config/themes/blackmetal.conf;
 
-  services.swayidle = {
-    enable = true;
-    timeouts = [
-      {
-        timeout = 300;
-        command = "${pkgs.swaylock-effects}/bin/swaylock -f";
-      }
-      {
-        timeout = 600;
-        command = "hyprctl dispatch dpms off";
-      }
-    ];
-    events = [
-      {
-        event = "before-sleep";
-        command = "${pkgs.swaylock-effects}/bin/swaylock -f";
-      }
-    ];
+  services = {
+    swayidle = {
+      enable = true;
+      timeouts = [
+        {
+          timeout = 300;
+          command = "${pkgs.swaylock-effects}/bin/swaylock -f";
+        }
+        {
+          timeout = 600;
+          command = "hyprctl dispatch dpms off";
+        }
+      ];
+      events = [
+        {
+          event = "before-sleep";
+          command = "${pkgs.swaylock-effects}/bin/swaylock -f";
+        }
+      ];
+    };
   };
 
   systemd.user.services.fcitx5 = {

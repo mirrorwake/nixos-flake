@@ -9,12 +9,12 @@
 }: let
   CURRENT_USER = "mirror";
 in {
-  imports = [
-    (import ../modules/syncthing.nix {
-      CURRENT_USER = CURRENT_USER;
-    })
-#   ../modules/klipper.nix
-  ];
+#  imports = [
+#    (import ../modules/syncthing.nix {
+#      CURRENT_USER = CURRENT_USER;
+#    })
+#      ../modules/klipper.nix
+#  ];
 
   boot = {
     loader.grub = {
@@ -165,23 +165,15 @@ in {
     udev = {
       packages = with pkgs; [
         platformio-core.udev
-        (writeTextFile {
-          name = "99-uart.rules";
-          destination = "/etc/udev/rules.d/99-uart.rules";
-          text = ''
-            # FTDI
-            SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", GROUP="dialout", MODE="0660"
-
-            # CH340
-            SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", GROUP="dialout", MODE="0660"
-
-            # CP210x
-            SUBSYSTEM=="tty", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", GROUP="dialout", MODE="0660"
-          '';
-        })
+        libmtp # <-- make sure libmtp is included so its rules get installed
       ];
+
       extraRules = ''
+        # Your existing USB rules
         SUBSYSTEM=="usb", ATTR{idVendor}=="0925", ATTR{idProduct}=="3881", GROUP="plugdev", MODE="0660"
+
+        # Optional: MTP devices (Google Nexus/Pixel example)
+        SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee1", GROUP="plugdev", MODE="0666"
       '';
     };
   };
