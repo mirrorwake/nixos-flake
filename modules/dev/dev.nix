@@ -12,12 +12,21 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    # serial debug
     picocom
     minicom
     screen
+    # languages and compilers
+    ## lua
     lua
     love
+    ## nodejs
+    nodejs_24
     csvkit
+    # docker
+    docker
+    docker-compose
+    docker-color-output
     ffmpeg
     jq
     alejandra
@@ -26,5 +35,7 @@
     pkg-config
     sigrok-cli
     pulseview
+    vscodium-fhs
+
   ];
 }

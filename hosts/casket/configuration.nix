@@ -83,7 +83,7 @@ in {
     extraGroups = ["networkmanager" "wheel" "dialout" "disk" "plugdev" "audio" "video" "tty" "input" "lp" "kvm" "libvrtd" "docker"];
     initialPassword = "temppass";
     packages = with pkgs; [
-      vscodium-fhs
+      # packages go here
     ];
   };
 
