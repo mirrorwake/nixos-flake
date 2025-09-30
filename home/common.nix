@@ -13,7 +13,7 @@
   ];
 
   home.packages = with pkgs; [
-    tree-sitter
+    # packages go here
   ];
 
   xdg.configFile = {

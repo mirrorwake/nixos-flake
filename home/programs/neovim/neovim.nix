@@ -6,6 +6,7 @@
   home.packages = with pkgs; [
     neovim
     gcc # Needed for Treesitter compilation
+    tree-sitter
     git
     curl
     fd
