@@ -23,6 +23,7 @@
     enable = true;
     shellAliases = {
       manz = "compgen -c | sort -u | fzf | xargs man";
+      lg = "lazygit";
     };
     initExtra = ''
       export EDITOR=neovim
