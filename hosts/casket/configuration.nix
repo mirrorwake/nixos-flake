@@ -84,6 +84,7 @@ in {
     initialPassword = "temppass";
     packages = with pkgs; [
       # packages go here
+      keepassxc
     ];
   };
 

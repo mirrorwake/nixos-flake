@@ -36,6 +36,6 @@
     sigrok-cli
     pulseview
     vscodium-fhs
-
+    podman
   ];
 }
