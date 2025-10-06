@@ -37,5 +37,6 @@
     pulseview
     vscodium-fhs
     podman
+    podman-desktop
   ];
 }

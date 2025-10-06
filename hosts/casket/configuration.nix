@@ -85,6 +85,7 @@ in {
     packages = with pkgs; [
       # packages go here
       keepassxc
+      distrobox
     ];
   };
 
